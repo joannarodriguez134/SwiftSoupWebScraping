@@ -14,6 +14,10 @@
 		A71F191A2BB8032B00AE2EEC /* SwiftSoupWebScrapingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F19192BB8032B00AE2EEC /* SwiftSoupWebScrapingTests.swift */; };
 		A71F19242BB8032B00AE2EEC /* SwiftSoupWebScrapingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F19232BB8032B00AE2EEC /* SwiftSoupWebScrapingUITests.swift */; };
 		A71F19262BB8032B00AE2EEC /* SwiftSoupWebScrapingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F19252BB8032B00AE2EEC /* SwiftSoupWebScrapingUITestsLaunchTests.swift */; };
+		A71F19342BB803BA00AE2EEC /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = A71F19332BB803BA00AE2EEC /* SwiftSoup */; };
+		A71F19362BB808E300AE2EEC /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F19352BB808E300AE2EEC /* HTMLParser.swift */; };
+		A71F19382BB8095500AE2EEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F19372BB8095500AE2EEC /* ViewController.swift */; };
+		A71F193A2BB80C5800AE2EEC /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F19392BB80C5800AE2EEC /* WebViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,9 @@
 		A71F191F2BB8032B00AE2EEC /* SwiftSoupWebScrapingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftSoupWebScrapingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71F19232BB8032B00AE2EEC /* SwiftSoupWebScrapingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupWebScrapingUITests.swift; sourceTree = "<group>"; };
 		A71F19252BB8032B00AE2EEC /* SwiftSoupWebScrapingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupWebScrapingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A71F19352BB808E300AE2EEC /* HTMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLParser.swift; sourceTree = "<group>"; };
+		A71F19372BB8095500AE2EEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A71F19392BB80C5800AE2EEC /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71F19342BB803BA00AE2EEC /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +105,9 @@
 			children = (
 				A71F19072BB8032A00AE2EEC /* SwiftSoupWebScrapingApp.swift */,
 				A71F19092BB8032A00AE2EEC /* ContentView.swift */,
+				A71F19352BB808E300AE2EEC /* HTMLParser.swift */,
+				A71F19372BB8095500AE2EEC /* ViewController.swift */,
+				A71F19392BB80C5800AE2EEC /* WebViewWrapper.swift */,
 				A71F190B2BB8032B00AE2EEC /* Assets.xcassets */,
 				A71F190D2BB8032B00AE2EEC /* SwiftSoupWebScraping.entitlements */,
 				A71F190E2BB8032B00AE2EEC /* Preview Content */,
@@ -145,6 +156,9 @@
 			dependencies = (
 			);
 			name = SwiftSoupWebScraping;
+			packageProductDependencies = (
+				A71F19332BB803BA00AE2EEC /* SwiftSoup */,
+			);
 			productName = SwiftSoupWebScraping;
 			productReference = A71F19042BB8032A00AE2EEC /* SwiftSoupWebScraping.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +231,9 @@
 				Base,
 			);
 			mainGroup = A71F18FB2BB8032900AE2EEC;
+			packageReferences = (
+				A71F19322BB803BA00AE2EEC /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = A71F19052BB8032A00AE2EEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,7 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71F193A2BB80C5800AE2EEC /* WebViewWrapper.swift in Sources */,
+				A71F19362BB808E300AE2EEC /* HTMLParser.swift in Sources */,
 				A71F190A2BB8032A00AE2EEC /* ContentView.swift in Sources */,
+				A71F19382BB8095500AE2EEC /* ViewController.swift in Sources */,
 				A71F19082BB8032A00AE2EEC /* SwiftSoupWebScrapingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +629,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A71F19322BB803BA00AE2EEC /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A71F19332BB803BA00AE2EEC /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A71F19322BB803BA00AE2EEC /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A71F18FC2BB8032900AE2EEC /* Project object */;
 }
