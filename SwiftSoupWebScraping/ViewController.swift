@@ -8,7 +8,7 @@
 import WebKit
 import UIKit
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController, WKNavigationDelegate {
     
     private let webView: WKWebView = {
         let prefs = WKPreferences()
@@ -24,10 +24,13 @@ final class ViewController: UIViewController {
         
     }()
     
+    private let parser = HTMLParser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(webView)
         guard let url = URL(string: "https://blockclubchicago.org/category/back-of-the-yards/") else { return }
+        webView.navigationDelegate = self
         webView.load(URLRequest(url: url))
         
         NSLayoutConstraint.activate([
@@ -36,5 +39,16 @@ final class ViewController: UIViewController {
             webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             webView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
         ])
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.body.innerHTML") { [weak self] result, error in
+            guard let html = result as? String, error == nil else {
+                print("failed to get html")
+                return }
+            
+            self?.parser.parse(html: html)
+        }
+        
     }
 }
